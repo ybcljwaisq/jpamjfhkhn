@@ -1,5 +1,5 @@
 #!/bin/bash
 
 docker run \
-    -v ../data/:/opt/data \
-    -it ar_dataset
+    -v /home/marvin/dev/dataset/data:/opt/data \
+    -it cvat_to_nus

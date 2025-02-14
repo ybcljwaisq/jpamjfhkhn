@@ -2,6 +2,7 @@
 
 docker run \
     -v /home/marvin/dev/dataset/data/v1.0-mini/:/opt/ar_dataset/a2rl_OpenPCDet/data/nuscenes/v1.0-mini \
+    -v /home/marvin/dev/lidar_object_detection/OpenPCDet/.vscode:/opt/ar_dataset/a2rl_OpenPCDet/.vscode \
     -v $PWD/output:/opt/ar_dataset/a2rl_OpenPCDet/output \
     --gpus all -it ar_dataset
 

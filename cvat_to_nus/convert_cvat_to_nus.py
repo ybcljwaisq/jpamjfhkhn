@@ -577,6 +577,8 @@ if __name__ == "__main__":
 
     os.makedirs(path_output, exist_ok=True)
     os.makedirs(os.path.join(path_output, "maps"), exist_ok=True)
+    # from pathlib import Path
+    # Path(os.path.join(path_output, "maps").join("53992ee3023e5494b90c316c183be829.png")).touch() # quickfix for now (not tested yet)
     path_json = os.path.join(path_output, "v1.0-mini")
     os.makedirs(path_json, exist_ok=True)
     os.makedirs(os.path.join(path_output, "samples"), exist_ok=True)
