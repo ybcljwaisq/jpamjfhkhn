@@ -287,7 +287,7 @@ class NuScenesDataset(DatasetTemplate):
             'v1.0-test': 'test'
         }
         try:
-            eval_version = 'detection_cvpr_2019'
+            eval_version = 'detection_a2rl_2025'
             eval_config = config_factory(eval_version)
         except:
             eval_version = 'cvpr_2019'

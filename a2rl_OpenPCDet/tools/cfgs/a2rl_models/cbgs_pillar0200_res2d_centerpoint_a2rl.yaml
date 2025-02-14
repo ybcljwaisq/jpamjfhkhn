@@ -2,7 +2,7 @@ CLASS_NAMES: ['car']
 
 DATA_CONFIG:
     _BASE_CONFIG_: cfgs/dataset_configs/a2rl_dataset.yaml
-    POINT_CLOUD_RANGE: [-84.0, -84.0, -10.0, 250.0, 250.0, 10.0]
+    POINT_CLOUD_RANGE: [-84.0, -84.0, -10.0, 252.0, 252.0, 10.0]
 
     DATA_AUGMENTOR:
         DISABLE_AUG_LIST: ['placeholder']
@@ -49,7 +49,7 @@ DATA_CONFIG:
           }
 
         - NAME: transform_points_to_voxels
-          VOXEL_SIZE: [0.2, 0.2, 0.2]
+          VOXEL_SIZE: [0.2, 0.2, 20]
           MAX_POINTS_PER_VOXEL: 10
           MAX_NUMBER_OF_VOXELS: {
             'train': 120000,
