@@ -25,7 +25,7 @@ RUN pip3 install spconv-cu118
 
 WORKDIR /opt
 
-RUN git clone https://github.com/ybcljwaisq/jpamjfhkhn.git /opt/ar_dataset
+RUN git clone https://github.com/ybcljwaisq/jpamjfhkhn.git /opt/ar_dataset ###
 
 WORKDIR /opt/ar_dataset/a2rl_OpenPCDet
 RUN python3 setup.py develop

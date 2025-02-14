@@ -29,7 +29,7 @@ DATA_AUGMENTOR:
               - nuscenes_dbinfos_1sweeps_withvelo.pkl
           PREPARE: {
              filter_by_min_points: [
-                 'car:0',
+                 'car:5',
              ],
           }
 
