@@ -1,10 +1,9 @@
-CLASS_NAMES: ['car','truck', 'construction_vehicle', 'bus', 'trailer',
-              'barrier', 'motorcycle', 'bicycle', 'pedestrian', 'traffic_cone']
+CLASS_NAMES: ['car']
 
 DATA_CONFIG:
     _BASE_CONFIG_: cfgs/dataset_configs/a2rl_dataset.yaml
 
-    POINT_CLOUD_RANGE: [-200.0, -200.0, -10.0, 250.0, 250.0, 10.0]
+    POINT_CLOUD_RANGE: [-84.0, -84.0, -10.0, 252.0, 252.0, 10.0]
     DATA_PROCESSOR:
         -   NAME: mask_points_and_boxes_outside_range
             REMOVE_OUTSIDE_BOXES: True
@@ -19,8 +18,8 @@ DATA_CONFIG:
             VOXEL_SIZE: [0.2, 0.2, 20.0]
             MAX_POINTS_PER_VOXEL: 20
             MAX_NUMBER_OF_VOXELS: {
-                'train': 30000,
-                'test': 30000
+                'train': 120000,
+                'test': 160000
             }
 
 MODEL:
