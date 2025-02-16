@@ -1,5 +1,4 @@
-CLASS_NAMES: ['car','truck', 'construction_vehicle', 'bus', 'trailer',
-              'barrier', 'motorcycle', 'bicycle', 'pedestrian', 'traffic_cone']
+CLASS_NAMES: ['car']
 
 DATA_CONFIG:
     _BASE_CONFIG_: cfgs/dataset_configs/a2rl_dataset.yaml
@@ -13,7 +12,7 @@ DATA_CONFIG:
               USE_SHARED_MEMORY: False  #True  # set it to True to speed up (it costs about 15GB shared memory)
               PREPARE: {
                 filter_by_min_points: [
-                    'car:0',
+                    'car:5',
                 ],
               }
 

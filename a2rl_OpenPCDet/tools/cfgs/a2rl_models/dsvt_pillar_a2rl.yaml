@@ -161,7 +161,7 @@ OPTIMIZATION:
     NUM_EPOCHS: 24
 
     OPTIMIZER: adam_onecycle
-    LR: 0.003 #
+    LR: 0.001 # try to reduce the LR in order to avoid the NaN problem
     WEIGHT_DECAY: 0.05
     MOMENTUM: 0.9
 
