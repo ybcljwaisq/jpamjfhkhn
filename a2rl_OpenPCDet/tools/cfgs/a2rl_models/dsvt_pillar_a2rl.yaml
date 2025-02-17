@@ -59,14 +59,14 @@ MODEL:
         WITH_DISTANCE: False
         USE_ABSLOTE_XYZ: True
         USE_NORM: True
-        NUM_FILTERS: [ 192, 192 ]
+        NUM_FILTERS: [ 128, 128 ]
 
     BACKBONE_3D:
         NAME: DSVT
         INPUT_LAYER:
-            sparse_shape: [528, 528, 1]
+            sparse_shape: [468, 468, 1]
             downsample_stride: []
-            d_model: [192]
+            d_model: [128]
             set_info: [[36, 4]]
             window_shape: [[12, 12, 1]]
             hybrid_factor: [2, 2, 1] # x, y, z
@@ -75,20 +75,20 @@ MODEL:
 
         block_name: ['DSVTBlock']
         set_info: [[36, 4]]
-        d_model: [192]
+        d_model: [128]
         nhead: [8]
-        dim_feedforward: [384]
+        dim_feedforward: [256]
         dropout: 0.0
         activation: gelu
-        output_shape: [526, 526]
-        conv_out_channel: 192
+        output_shape: [468, 468]
+        conv_out_channel: 128
         # You can enable torch.utils.checkpoint to save GPU memory
         USE_CHECKPOINT: True
 
     MAP_TO_BEV:
         NAME: PointPillarScatter3d
-        INPUT_SHAPE: [528, 528, 1]
-        NUM_BEV_FEATURES: 192
+        INPUT_SHAPE: [468, 468, 1]
+        NUM_BEV_FEATURES: 128
 
     BACKBONE_2D:
         NAME: BaseBEVResBackbone
@@ -157,7 +157,7 @@ MODEL:
 
 
 OPTIMIZATION:
-    BATCH_SIZE_PER_GPU: 3
+    BATCH_SIZE_PER_GPU: 4
     NUM_EPOCHS: 24
 
     OPTIMIZER: adam_onecycle
