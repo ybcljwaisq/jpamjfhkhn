@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
 
 # Set environment variables
 ENV NVENCODE_CFLAGS "-I/usr/local/cuda/include"
@@ -15,24 +15,26 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # PyTorch for CUDA 11.8
-RUN pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
+RUN pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu124
 ENV TORCH_CUDA_ARCH_LIST="8.0 8.6 8.7 8.9+PTX"
     
 # OpenPCDet
 # Fiexed Kornia version for bug
 RUN pip3 install numpy==1.23.0 llvmlite numba tensorboardX easydict pyyaml scikit-image tqdm SharedArray open3d mayavi av2 kornia pyquaternion opencv-python==4.8.0.76
-RUN pip3 install spconv-cu118
+RUN pip3 install spconv-cu124
 
 WORKDIR /opt
 
-RUN git clone https://github.com/ybcljwaisq/jpamjfhkhn.git /opt/ar_dataset ####
+RUN git clone https://github.com/ybcljwaisq/jpamjfhkhn.git /opt/ar_dataset
 
 WORKDIR /opt/ar_dataset/a2rl_OpenPCDet
 RUN python3 setup.py develop
 RUN pip install kornia==0.5.8
-RUN pip install torch-scatter -f https://data.pyg.org/whl/torch-2.4.0+cu118.html
+RUN pip install torch-scatter -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
 
 WORKDIR /opt/ar_dataset/a2rl_nuscenes_devkit
 RUN cd setup && pip install -e .
 
-WORKDIR /opt/ar_dataset
+RUN pip install ipdb mamba-ssm
+
+WORKDIR /opt/ar_dataset/a2rlOpenPCDet
