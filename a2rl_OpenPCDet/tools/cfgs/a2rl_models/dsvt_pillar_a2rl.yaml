@@ -3,7 +3,7 @@ CLASS_NAMES: ['car']
 DATA_CONFIG:
     _BASE_CONFIG_: cfgs/dataset_configs/a2rl_dataset.yaml
 
-    POINT_CLOUD_RANGE: [-85.12, -85.12, -10, 252.87, 252.87, 10.0] 
+    POINT_CLOUD_RANGE: [-49.0, -49.0, -10, 250.52, 250.52, 10.0] # We loose some detections in the rear here
 
     DATA_AUGMENTOR:
         DISABLE_AUG_LIST: ['placeholder']

@@ -3,7 +3,7 @@ CLASS_NAMES: ['car']
 DATA_CONFIG:
     _BASE_CONFIG_: cfgs/dataset_configs/a2rl_dataset.yaml
 
-    POINT_CLOUD_RANGE: [-85.12, -85.12, -10, 252.87, 252.87, 10.0] 
+    POINT_CLOUD_RANGE: [-49.0, -49.0, -10, 250.52, 250.52, 10.0]  # We loose some detections in the rear here
 
     DATA_AUGMENTOR:
         DISABLE_AUG_LIST: ['placeholder']
@@ -49,7 +49,7 @@ DATA_CONFIG:
           }
 
         - NAME: transform_points_to_voxels_placeholder
-          VOXEL_SIZE: [ 0.64, 0.64, 20]
+          VOXEL_SIZE: [ 0.64, 0.64, 0.625]
 
 MODEL:
     NAME: CenterPoint
@@ -117,7 +117,7 @@ MODEL:
         BN_EPS: 0.001
         BN_MOM: 0.01
         SEPARATE_HEAD_CFG:
-            HEAD_ORDER: ['center', 'center_z', 'dim', 'rot']
+            HEAD_ORDER: ['center', 'center_z', 'dim', 'rot', 'vel']
             HEAD_DICT: {
               'center': {'out_channels': 2, 'num_conv': 2},
               'center_z': {'out_channels': 1, 'num_conv': 2},
@@ -161,7 +161,7 @@ MODEL:
 
 
 OPTIMIZATION:
-    BATCH_SIZE_PER_GPU: 3
+    BATCH_SIZE_PER_GPU: 1
     NUM_EPOCHS: 24
 
     OPTIMIZER: adam_onecycle
