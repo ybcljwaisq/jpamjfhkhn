@@ -37,4 +37,4 @@ RUN cd setup && pip install -e .
 
 RUN pip install ipdb mamba-ssm
 
-WORKDIR /opt/ar_dataset/a2rlOpenPCDet
+WORKDIR /opt/ar_dataset/a2rl_OpenPCDet
