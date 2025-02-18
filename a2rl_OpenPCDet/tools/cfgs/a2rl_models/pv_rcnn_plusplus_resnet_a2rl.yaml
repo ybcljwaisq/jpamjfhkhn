@@ -88,7 +88,7 @@ MODEL:
                 NUM_REDUCED_CHANNELS: 2
                 NUM_CHANNELS_OF_LOCAL_AGGREGATION: 32
                 MSG_POST_MLPS: [ 32 ]
-                FILTER_NEIGHBOR_WITH_ROI: True
+                FILTER_NEIGHBOR_WITH_ROI: False
                 RADIUS_OF_NEIGHBOR_WITH_ROI: 2.4
 
                 GROUP_CFG_0:
@@ -112,7 +112,7 @@ MODEL:
                 NUM_REDUCED_CHANNELS: 32
                 NUM_CHANNELS_OF_LOCAL_AGGREGATION: 32
                 MSG_POST_MLPS: [128]
-                FILTER_NEIGHBOR_WITH_ROI: True
+                FILTER_NEIGHBOR_WITH_ROI: False
                 RADIUS_OF_NEIGHBOR_WITH_ROI: 4.0
 
                 GROUP_CFG_0:
@@ -136,7 +136,7 @@ MODEL:
                 NUM_REDUCED_CHANNELS: 32
                 NUM_CHANNELS_OF_LOCAL_AGGREGATION: 32
                 MSG_POST_MLPS: [ 128 ]
-                FILTER_NEIGHBOR_WITH_ROI: True
+                FILTER_NEIGHBOR_WITH_ROI: False
                 RADIUS_OF_NEIGHBOR_WITH_ROI: 6.4
 
                 GROUP_CFG_0:
