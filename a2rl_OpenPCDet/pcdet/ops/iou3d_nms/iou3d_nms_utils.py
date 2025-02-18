@@ -124,6 +124,9 @@ def nms_gpu(boxes, scores, thresh, pre_maxsize=None, **kwargs):
     :param thresh:
     :return:
     """
+    if boxes.shape[1] > 7: #temporary fix for models that also predict velocity, please remove later
+        boxes = boxes[:, :7]
+
     assert boxes.shape[1] == 7
     order = scores.sort(0, descending=True)[1]
     if pre_maxsize is not None:

@@ -35,6 +35,7 @@ RUN pip install torch-scatter -f https://data.pyg.org/whl/torch-2.4.0+cu124.html
 WORKDIR /opt/ar_dataset/a2rl_nuscenes_devkit
 RUN cd setup && pip install -e .
 
-RUN pip install ipdb mamba-ssm
+RUN pip install ipdb mamba-ssm==1.2.2
+RUN pip install causal-conv1d
 
-WORKDIR /opt/ar_dataset/a2rl_OpenPCDet
+WORKDIR /opt/ar_dataset/a2rl_OpenPCDet/tools

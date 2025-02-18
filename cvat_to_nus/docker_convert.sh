@@ -1,5 +1,5 @@
 #!/bin/bash
 
 docker run \
-    -v /home/marvin/dev/dataset/data:/opt/data \
+    -v $PWD/../data \
     -it cvat_to_nus
