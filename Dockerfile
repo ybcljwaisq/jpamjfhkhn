@@ -26,8 +26,8 @@ RUN pip3 install spconv-cu121
 WORKDIR /opt
 
 RUN git clone https://github.com/ybcljwaisq/jpamjfhkhn.git /opt/ar_dataset
-# @todo: checkout to LION branch
-COPY . /opt/ar_dataset
+WORKDIR /opt/ar_dataset/
+RUN git pull --all && git checkout lion
 
 WORKDIR /opt/ar_dataset/a2rl_OpenPCDet
 RUN python3 setup.py develop
