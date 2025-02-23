@@ -7,6 +7,7 @@ from .spconv_backbone_voxelnext2d import VoxelResBackBone8xVoxelNeXt2D
 from .spconv_unet import UNetV2
 from .dsvt import DSVT
 from .voxel_mamba import Voxel_Mamba
+from .lion_backbone_one_stride import LION3DBackboneOneStride, LION3DBackboneOneStride_Sparse
 
 __all__ = {
     'VoxelBackBone8x': VoxelBackBone8x,
@@ -21,4 +22,6 @@ __all__ = {
     'PillarRes18BackBone8x': PillarRes18BackBone8x,
     'DSVT': DSVT,
     'Voxel_Mamba': Voxel_Mamba,
+    'LION3DBackboneOneStride': LION3DBackboneOneStride,
+    'LION3DBackboneOneStride_Sparse': LION3DBackboneOneStride_Sparse,
 }

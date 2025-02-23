@@ -133,5 +133,21 @@ if __name__ == '__main__':
                     'src/ingroup_inds_kernel.cu',
                 ]
             ),
+            make_cuda_ext(
+                name='box_attn_cuda',
+                module='pcdet.ops.box_attention',
+                sources=[
+                    'src/box_attn.cpp',
+                    'src/box_attn_kernel.cu',
+                ]
+            ),
+            make_cuda_ext(
+                name='wkv6_cuda',
+                module='pcdet.ops.wkv6',
+                sources=[
+                    'src/wkv6_op.cpp',
+                    'src/wkv6_cuda.cu',
+                ]
+            ),
         ],
     )
