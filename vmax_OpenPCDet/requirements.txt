@@ -1,0 +1,24 @@
+--extra-index-url https://download.pytorch.org/whl/cu117
+numpy==1.26.4
+llvmlite
+numba==0.59.1
+torch==2.0.1
+tensorboardX
+easydict
+pyyaml
+scikit-image
+tqdm
+torchvision
+opencv-python
+pyquaternion
+spconv-cu120
+av2
+kornia==0.5.8
+typing-extensions==4.8.0
+transforms3d
+open3d
+SharedArray==3.2.1
+pypcd4==1.0.1
+-f https://data.pyg.org/whl/torch-2.0.1+cu117.html
+torch-scatter
+nuscenes-devkit
